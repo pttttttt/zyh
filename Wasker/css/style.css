@@ -651,7 +651,7 @@ form {
 form .mil-input-frame {
   position: relative;
   width: 100%;
-  margin-bottom: 15px; /* 这是设置的边距，但如果被覆盖，可能不会生效 */
+   /*margin-bottom: 15px; 这是设置的边距，但如果被覆盖，可能不会生效 */
 }
 form .mil-input-frame input {
   height: 6rem;
