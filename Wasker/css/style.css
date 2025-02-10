@@ -1726,16 +1726,22 @@ main menu
   filter: grayscale(0) brightness(1); /* 鼠标悬浮时取消灰度模式并恢复亮度 */
 }
 
-.mil-main-menu ul li.mil-current a svg.nav-icon span:after {
+.mil-main-menu ul li.mil-current a svg .nav-icon span:after {
   content: "(current)";
   margin-left: 1rem;
   opacity: 0.3;
   font-weight: 300;
 }
-.mil-main-menu ul li.mil-current a i {
+
+.mil-main-menu ul li .mil-current a i {
   color: #DBA91C;
 }
 
+/* 当前页面导航栏logo标记为黄色 */
+.mil-main-menu ul li.mil-current a .nav-icon {
+    filter: brightness(1);
+    color: #DBA91C;
+}
 
 .mil-main-menu ul li a i {
   font-size: 1.8rem;
