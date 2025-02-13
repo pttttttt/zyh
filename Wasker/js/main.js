@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (progress <= 100) {
             preloaderPercent.textContent = progress;
             preloaderLine.style.width = progress + "%";
-            progress += 5;
+            progress += 20;
         } else {
             clearInterval(preloaderInterval);
             preloader.classList.add('mil-complete');

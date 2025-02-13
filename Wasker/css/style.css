@@ -868,6 +868,8 @@ masonry grid
 .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-item.mil-grid-item-size-2 .mil-work-card {
   padding-bottom: 69%;
 }
+
+
 @media (max-width: 992px) {
   .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-item {
     padding: 0 0.75rem;
@@ -892,6 +894,7 @@ masonry grid
     padding-bottom: 69%;
   }
 }
+
 .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
   padding: 0 0.75rem;
   width: 50%;
@@ -912,6 +915,30 @@ masonry grid
   }
   .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-card {
     padding-bottom: 69%;
+  }
+}
+
+/*定义首图*/
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
+  padding: 0 0.75rem;
+  width: 50%;
+}
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+  width: 100%;
+}
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-card {
+  padding-bottom: 50%;
+}
+@media (max-width: 768px) {
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
+    padding: 0 0.75rem;
+    width: 100%;
+  }
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+    width: 100%;
+  }
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-card {
+    padding-bottom: 50%;
   }
 }
 
