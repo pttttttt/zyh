@@ -1710,41 +1710,8 @@ main menu
 }
 
 
-
-/* 图标样式 */
-.nav-icon {
-  width: 24px; /* 图标宽度 */
-  height: 24px; /* 图标高度 */
-  margin-right: 8px; /* 图标与文字之间的间距 */
-  vertical-align: middle; /* 垂直居中对齐 */
-  filter: grayscale(100%) brightness(0.6); /* 默认为灰度模式并降低亮度 */
-  transition: filter 0.3s ease; /* 平滑过渡效果 */
-}
-
-/* 鼠标悬浮时的图标样式 */
-.nav-icon:hover {
-  filter: grayscale(0) brightness(1); /* 鼠标悬浮时取消灰度模式并恢复亮度 */
-}
-
-.mil-main-menu ul li.mil-current a svg .nav-icon span:after {
-  content: "(current)";
-  margin-left: 1rem;
-  opacity: 0.3;
-  font-weight: 300;
-}
-
-.mil-main-menu ul li .mil-current a i {
-  color: #DBA91C;
-}
-
-/* 当前页面导航栏logo标记为黄色 */
-.mil-main-menu ul li.mil-current a .nav-icon {
-    filter: brightness(1);
-    color: #DBA91C;
-}
-
 .mil-main-menu ul li a i {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: #A5A5A5;
   -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
@@ -1791,9 +1758,17 @@ main menu
   -webkit-transform: translateX(-1.25rem) translateY(0.2rem) rotate(45deg);
           transform: translateX(-1.25rem) translateY(0.2rem) rotate(45deg);
 }
+
+/*控制悬浮颜色*/
 .mil-main-menu ul li a:hover i {
   color: #E0E0E0;
 }
+.mil-main-menu ul li .mil-current a:hover i {
+  color: #E0E0E0; /* 当前页面的图标在鼠标悬浮时也变为亮黄色 */
+}
+
+
+
 .mil-main-menu ul li a:hover span {
   opacity: 1;
   -webkit-transform: translateX(3.5rem) scale(1);
@@ -1808,10 +1783,19 @@ main menu
   margin-left: 1rem;
   opacity: 0.3;
   font-weight: 300;
+
+
 }
 .mil-main-menu ul li.mil-current a i {
   color: #DBA91C;
+  font-size: 2.2rem;
 }
+
+.mil-main-menu ul li.mil-current a:hover i {
+ color: #FFDC54; /* 当前页面的图标在鼠标悬浮时也变为亮黄色 */
+}
+
+
 @media screen and (max-width: 1200px) {
   .mil-main-menu {
     position: absolute;
