@@ -858,7 +858,8 @@ masonry grid
   margin: 0 -0.75rem;
   width: calc(100% + 1.5rem);
 }
-.mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-item {
+.mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-sizer,
+ .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-item {
   padding: 0 0.75rem;
   width: 25%;
 }
@@ -895,7 +896,8 @@ masonry grid
   }
 }
 
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, 
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
   padding: 0 0.75rem;
   width: 50%;
 }
@@ -919,29 +921,46 @@ masonry grid
 }
 
 /*定义首图*/
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
-  padding: 0 0.75rem;
-  width: 50%;
-}
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
-  width: 100%;
-}
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-card {
-  padding-bottom: 50%;
-}
-@media (max-width: 768px) {
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
-    padding: 0 0.75rem;
-    width: 100%;
-  }
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
-    width: 100%;
-  }
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-card, .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-card {
-    padding-bottom: 50%;
-  }
+
+/* 全宽特殊项规则 */
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+  width: 50%;  /* 特殊项占满父容器宽度 */
 }
 
+/* 卡片容器比例规则 */
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P .mil-work-cardP,
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-cardP {
+  padding-bottom: 69%;  /* 基于父元素宽度69%的高度 */
+}
+/* 嵌套层级：
+   .mil-grid-frame
+    → .mil-grid.mil-grid-2-col
+       → .grid-sizer.grid-item-size-2 或 .grid-item.grid-item-size-2
+          → .mil-work-card (最终内容容器)
+*/
+
+/* 移动端适配规则 */
+@media (max-width: 768px) {
+  /* 基础项响应式规则 */
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer,
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item {
+    padding: 0 0.75rem;
+    width: 100%;  /* 移动端改为单列布局 */
+  }
+  
+  /* 全宽项在移动端的保持规则 */
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P,
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+    width: 100%;  /* 保持全宽设置 */
+  }
+  
+  /* 卡片比例保持 */
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P .mil-work-cardP,
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-cardP {
+    padding-bottom: 69%;  /* 保持宽高比 */
+  }
+}
 /* -------------------------------------------
 
 page transitions
