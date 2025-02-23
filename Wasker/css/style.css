@@ -192,6 +192,7 @@ flex
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  row-gap: 12px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -872,7 +873,7 @@ masonry grid
 /* 双倍宽度项的设置 */
 .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-sizer.mil-grid-item-size-2,
 .mil-grid-frame .mil-grid.mil-grid-4-col .mil-grid-item.mil-grid-item-size-2 {
-  width: 50%;         /* 占据两列宽度 */
+  width: 100%;         /* 占据两列宽度 */
 }
 
 /* 图片容器比例设置（需要修改的核心部分） */
@@ -929,20 +930,30 @@ masonry grid
 /*定义首图*/
 
 /* 全宽特殊项规则 */
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P,
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2,
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 {
   width: 100%;  /* 特殊项占满父容器宽度 */
 }
 
 /* 卡片容器比例规则 */
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P .mil-work-cardP,
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-cardP {
-  padding-bottom: 5%;  /* 基于父元素宽度48%的高度 */
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-cardP,
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-cardP {
+  padding-bottom: 34%;
 }
 
 /* 图片样式优化 */
-.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-cardP img {
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-cardP img {
   max-width: 100%;
+}
+
+/* 首图文本样式优化 */
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-cardP .mil-name {
+  justify-content: flex-end;
+}
+
+/* 首图文本样式优化 */
+.mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-cardP .mil-descr {
+  align-items: flex-start;
 }
 
 /* 移动端适配规则 */
@@ -955,15 +966,15 @@ masonry grid
   }
   
   /* 全宽项在移动端的保持规则 */
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P,
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P {
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2,
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 {
     width: 100%;  /* 保持全宽设置 */
   }
   
   /* 卡片比例保持 */
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2P .mil-work-cardP,
-  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2P .mil-work-cardP {
-    padding-bottom: %;  /* 保持宽高比 */
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-sizer.mil-grid-item-size-2 .mil-work-cardP,
+  .mil-grid-frame .mil-grid.mil-grid-2-col .mil-grid-item.mil-grid-item-size-2 .mil-work-cardP {
+    padding-bottom: 48%;  /* 保持宽高比 */
   }
 }
 /* -------------------------------------------
@@ -1132,7 +1143,6 @@ space
   margin-bottom: 2rem;
   /* ä¿®æ”¹æ ‡é¢˜çš„å­—å· */
   font-size: 2rem; /* è®¾ç½®å­—å·ä¸º2rem */
-}
 }
 
 .mil-mb-15 {
@@ -2007,7 +2017,7 @@ portfolio
   -webkit-transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.4s cubic-bezier(0, 0, 0.3642, 1);
 }
-.mil-work-card .
+.mil-work-card .mil-descr
  {
   opacity: 0;
   display: -webkit-box;
@@ -2074,10 +2084,10 @@ portfolio
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   -webkit-box-align: end;
       -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   -webkit-transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
   transition: 0.2s cubic-bezier(0, 0, 0.3642, 1);
 }
@@ -2684,7 +2694,7 @@ blog
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, rgba(18, 18, 18, 0.9)), to(rgba(18, 18, 18, 0.2)));
   background: linear-gradient(0deg, rgba(18, 18, 18, 0.9) 40%, rgba(18, 18, 18, 0.2) 100%);
